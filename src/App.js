@@ -1,18 +1,15 @@
-import UseCallback from './hooks/useCallback';
-import UseEffect from './hooks/useEffect';
-import UseMemo from './hooks/useMemo';
-import UseRef from './hooks/useRef';
-import UseState from './hooks/useState';
+import ContextProvider from './context/user';
+import Counter from './components/counter/counter';
+import User from './components/user';
 
 function App() {
   return (
-    <>
-      <UseState />
-      <UseRef />
-      <UseMemo />
-      <UseCallback />
-      <UseEffect />
-    </>
+    <ContextProvider>
+      <div className="APP">
+        {/* <Counter /> */}
+        <User />
+      </div>
+    </ContextProvider>
   );
 }
 
