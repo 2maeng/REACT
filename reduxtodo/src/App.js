@@ -1,0 +1,33 @@
+import { Provider } from 'react-redux';
+import { BrowserRouter, Routes, Route, RouterProvider } from 'react-router-dom';
+import { store } from 'store/store';
+
+import { ThemeProvider } from 'styled-components';
+import HomePage from './pages/Home';
+
+import Homepage from './pages/Home';
+import { TodoPage } from './pages/Todo';
+import router from './routes/routing';
+import GlobalStyles from './styles/global';
+import theme from './styles/theme';
+
+function App() {
+  return (
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <RouterProvider router={router} />
+
+        {/* <BrowserRouter>
+        HTML5를 지원하는 브라우저 주소를 감지
+        <Routes>
+        Route path와 감지한 주소가 일치한 router만을 렌더링 시켜주는 역할
+        <Route path="/" element={<HomePage />} />
+        <Route path="/todo" element={<TodoPage />} />
+        </Routes>
+      </BrowserRouter> */}
+      </ThemeProvider>
+    </Provider>
+  );
+}
+export default App;
